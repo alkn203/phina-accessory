@@ -1,2 +1,2 @@
-# phina_accessory_gridlayout
-Gridlayout for Gruop
+# phina.accessory.GridLayout
+Gridlayout for Group --- e.g. DipsplayElement
