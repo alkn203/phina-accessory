@@ -1,5 +1,4 @@
 phina.namespace(function() {
-
   /**
    * @class phina.accessory.GridLayout
    */
@@ -8,26 +7,34 @@ phina.namespace(function() {
     /**
      * @constructor
      */
-    init: function(target) {
-      this.superInit(target);
+    init: function(options) {
+      this.superInit();
+
+      options = (options || {}).$safe({
+        cellWidth: 64,
+        cellHeight: 64,
+        offsetX: 100,
+        offsetY: 100,
+        maxPerLine: 8,
+        arrangement: 'horizontal', // vertical
+      });
+    
+      this.$extend(options);
       
-      this.gx = null;
-      this.gy = null;
-      this.arrangement = 'horizontal'; // vertical
-      this.offsetX = 0;
-      this.offsetY = 0;
+      this.on('attached', function() {
+        this.reposition();  
+      }, this);
     },
     
     reposition: function() {
       var children = this.target.children;
-
+  
       if (this.arrangement === 'horizontal') {
-
         children.each(function(child, i) {
-          var xIndex = (i%this.gx.columns);
-          var yIndex = (i/this.gy.columns)|0;
-          var x = this.gx.unitWidth*xIndex + this.offsetX;
-          var y = this.gy.unitWidth*yIndex + this.offsetY;
+          var xIndex = (i%this.maxPerLine);
+          var yIndex = (i/this.maxPerLine)|0;
+          var x = this.cellWidth*xIndex + this.offsetX;
+          var y = this.cellHeight*yIndex + this.offsetY;
           child.setPosition(x, y);
         }, this);
       }
