@@ -7,20 +7,16 @@ phina.namespace(function() {
     /**
      * @constructor
      */
-    init: function(options) {
-      this.superInit();
+    init: function(target) {
+      this.superInit(target);
 
-      options = (options || {}).$safe({
-        cellWidth: 64,
-        cellHeight: 64,
-        offsetX: 100,
-        offsetY: 100,
-        maxPerLine: 8,
-        arrangement: 'horizontal', // vertical
-      });
-    
-      this.$extend(options);
-      
+      this.cellWidth = 64;
+      this.cellHeight = 64;
+      this.offsetX = 100;
+      this.offsetY = 100;
+      this.maxPerLine = 8;
+      this.arrangement = 'horizontal'; // vertical
+
       this.on('attached', function() {
         this.reposition();  
       }, this);
@@ -39,5 +35,12 @@ phina.namespace(function() {
         }, this);
       }
     },
+  });
+  
+  phina.app.Element.prototype.getter('gridlayout', function() {
+    if (!this._gridlayout) {
+      this._gridlayout = phina.accessory.GridLayout().attachTo(this);
+    }
+    return this._gridlayout;
   });
 });
