@@ -12,9 +12,9 @@ phina.namespace(function() {
 
       this.cellWidth = 64;
       this.cellHeight = 64;
-      this.offsetX = 100;
-      this.offsetY = 100;
-      this.maxPerLine = 8;
+      this.offsetX = 32;
+      this.offsetY = 32;
+      this.maxPerLine = 10;
       this.arrangement = 'horizontal'; // vertical
 
       this.on('attached', function() {
