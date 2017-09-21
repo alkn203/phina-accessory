@@ -1,5 +1,5 @@
 # phina.accessory.GridLayout
-Gridlayout for Group --- e.g. DipsplayElement
+Arrange groups(e.g. DipsplayElement) in a grid.
 
 ## Usage
 
@@ -8,15 +8,15 @@ Gridlayout for Group --- e.g. DipsplayElement
 <script src="https://rawgit.com/alkn203/phina_accessory_gridlayout/master/gridlayout.js"></script>
 ```
 
-## options
+## Property
 
 ```
-cellWidth ---- default value 64
-cellHeight --- default value 64
-offsetX ------ default value 100
-offsetY ------ default value 100
-maxPerLine --- default value 8
+cellWidth ---- Horizontal size of grid
+cellHeight --- Vertical size of grid
+offsetX ------ Offset value in x direction
+offsetY ------ Offset value in y direction
+maxPerLine --- Maximum number of elements per row
 ```
 
-## example
+## Example
 http://runstant.com/alkn203/projects/280cca92
