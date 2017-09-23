@@ -20,5 +20,10 @@ offsetY ------ Offset value in y direction
 maxPerLine --- Maximum number of elements per row
 ```
 
+## Function
+
+```
+reposition --- Re-arrange elements in a grid
+```
 ## Example
 http://runstant.com/alkn203/projects/280cca92
