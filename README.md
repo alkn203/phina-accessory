@@ -1,6 +1,8 @@
 # phina.accessory.GridLayout
 Arrange groups(e.g. DipsplayElement) in a grid.
 
+![GridLayout](https://raw.githubusercontent.com/alkn203/phina_accessory_gridlayout/master/image.gif)
+
 ## Usage
 
 ```
