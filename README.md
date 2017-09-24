@@ -3,7 +3,7 @@
 ## GridLayout
 Arrange groups(e.g. DipsplayElement) in a grid.
 
-![GridLayout](https://raw.githubusercontent.com/alkn203/phina_accessory_gridlayout/master/image.gif)
+![GridLayout](https://rawgit.com/alkn203/phina-accessory/master/image/master/images/gridlayout.gif)
 
 ### Usage
 
@@ -33,7 +33,7 @@ http://runstant.com/alkn203/projects/280cca92
 ## RingLayout
 Arrange groups(e.g. DipsplayElement) in a ring shape.
 
-![RingLayout](https://raw.githubusercontent.com/alkn203/phina_accessory_ringlayout/master/image.gif)
+![RingLayout](https://rawgit.com/alkn203/phina-accessory/master/image/master/images/ringlayout.gif)
 
 ### Usage
 
