@@ -1,16 +1,18 @@
-# phina.accessory.GridLayout
+# phina.accessory
+
+## GridLayout
 Arrange groups(e.g. DipsplayElement) in a grid.
 
 ![GridLayout](https://raw.githubusercontent.com/alkn203/phina_accessory_gridlayout/master/image.gif)
 
-## Usage
+### Usage
 
 ```
-<script src="http://cdn.rawgit.com/phi-jp/phina.js/v0.2.0/build/phina.js"></script>
-<script src="https://rawgit.com/alkn203/phina_accessory_gridlayout/master/gridlayout.js"></script>
+<script src="http://cdn.rawgit.com/phi-jp/phina.js/v0.2.1/build/phina.js"></script>
+<script src="https://rawgit.com/alkn203/phina-accessory/master/gridlayout.js"></script>
 ```
 
-## Property
+### Property
 
 ```
 cellWidth ---- Horizontal size of grid
@@ -20,27 +22,27 @@ offsetY ------ Offset value in y direction
 maxPerLine --- Maximum number of elements per row
 ```
 
-## Function
+### Function
 
 ```
 reposition --- Re-arrange elements in a grid
 ```
-## Example
+### Example
 http://runstant.com/alkn203/projects/280cca92
 
-# phina.accessory.RingLayout
+## RingLayout
 Arrange groups(e.g. DipsplayElement) in a ring shape.
 
 ![RingLayout](https://raw.githubusercontent.com/alkn203/phina_accessory_ringlayout/master/image.gif)
 
-## Usage
+### Usage
 
 ```
 <script src="http://cdn.rawgit.com/phi-jp/phina.js/v0.2.0/build/phina.js"></script>
-<script src="https://rawgit.com/alkn203/phina_accessory_ringlayout/master/ringlayout.js"></script>
+<script src="https://rawgit.com/alkn203/phina-accessory/master/ringlayout.js"></script>
 ```
 
-## Property
+### Property
 
 ```
 radius ---- Radius of a ring
@@ -48,12 +50,12 @@ offsetX --- Offset value in x direction
 offsetY --- Offset value in y direction
 ```
 
-## Function
+### Function
 
 ```
 reposition --- Re-arrange elements 
 ```
 
-## Example
+### Example
 
 http://runstant.com/alkn203/projects/3209a2e5
