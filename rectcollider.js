@@ -23,11 +23,17 @@ phina.namespace(function() {
           height: this.target.height,
           fill: null,
         }).addChildTo(this.target);
+        
+        this.collider.hide();
       }
     },
 
     ondetached: function() {
       if (this.collider) this.collider.remove();
+    },
+    
+    show: function() {
+      this.collider.show();        
     },
 
     offset: function(x, y) {

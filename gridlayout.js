@@ -16,12 +16,12 @@ phina.namespace(function() {
       this.offsetY = 32;
       this.maxPerLine = 10;
       this.arrangement = 'horizontal'; // vertical
-
-      this.on('attached', function() {
-        this.reposition();  
-      }, this);
     },
     
+    onattached: function() {
+      this.reposition();  
+    },
+
     reposition: function() {
       var children = this.target.children;
   

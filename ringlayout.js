@@ -16,12 +16,12 @@ phina.namespace(function() {
       this.ringRotation = 0;
       this.ringScaleX = 1;
       this.ringScaleY = 1;
-
-      this.on('attached', function() {
-        this.reposition();  
-      }, this);
     },
     
+    onattached: function() {
+      this.reposition();  
+    }, 
+
     reposition: function() {
       var children = this.target.children;
       var deg = 360 / children.length;
