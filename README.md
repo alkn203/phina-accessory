@@ -1,6 +1,6 @@
-# phina.accessory
+phina.js用の拡張アクセサリー
 
-## GridLayout
+# phina.accessory.GridLayout
 Arrange groups(e.g. DipsplayElement) in a grid.
 
 ![GridLayout](https://rawgit.com/alkn203/phina-accessory/master/images/gridlayout.gif)
@@ -30,7 +30,7 @@ reposition --- Re-arrange elements in a grid
 ### Example
 http://runstant.com/alkn203/projects/280cca92
 
-## RingLayout
+## phina.accessory.RingLayout
 Arrange groups(e.g. DipsplayElement) in a ring shape.
 
 ![RingLayout](https://rawgit.com/alkn203/phina-accessory/master/images/ringlayout.gif)
