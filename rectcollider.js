@@ -14,6 +14,7 @@ phina.namespace(function() {
      */
     init: function(target) {
       this.superInit(target);
+      this.colliderType = 'rect';
     },
     
     onattached: function() {

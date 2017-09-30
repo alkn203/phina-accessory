@@ -14,6 +14,7 @@ phina.namespace(function() {
      */
     init: function(target) {
       this.superInit(target);
+      this.colliderType = 'circle';
     },
     
     onattached: function() {
@@ -52,8 +53,8 @@ phina.namespace(function() {
       var y = this.collider.y + this.target.y;
       var circle = phina.geom.Circle(x, y, this.collider.radius);
 
-//      if (phina.geom.Collision.testRectRect(rect, other)) return true;
-//      return false;
+      if (phina.geom.Collision.testRectRect(rect, other)) return true;
+      return false;
     },
   });
 

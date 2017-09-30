@@ -1,33 +1,34 @@
-phina.js用の拡張アクセサリー
+phina.jsの拡張Accessoryクラス
 
 # phina.accessory.GridLayout
-Arrange groups(e.g. DipsplayElement) in a grid.
+グループをグリッド状に並べる。
 
 ![GridLayout](https://rawgit.com/alkn203/phina-accessory/master/images/gridlayout.gif)
 
-### Usage
+### 使い方
+html部分で以下のように引用する。
 
 ```
 <script src="http://cdn.rawgit.com/phi-jp/phina.js/v0.2.1/build/phina.js"></script>
 <script src="https://rawgit.com/alkn203/phina-accessory/master/gridlayout.js"></script>
 ```
 
-### Property
+### プロパティ
 
 ```
-cellWidth ---- Horizontal size of grid
-cellHeight --- Vertical size of grid
-offsetX ------ Offset value in x direction
-offsetY ------ Offset value in y direction
-maxPerLine --- Maximum number of elements per row
+cellWidth ---- グリッドのセルの横サイズ
+cellHeight --- グリッドのセルの縦サイズ
+offsetX ------ x方向のオフセット値
+offsetY ------ y方向のオフセット値
+maxPerLine --- １ライン当たりの最大要素数
 ```
 
-### Function
+### 関数
 
 ```
-reposition --- Re-arrange elements in a grid
+reposition --- グリッド状に再配置する
 ```
-### Example
+### サンプルコード
 http://runstant.com/alkn203/projects/280cca92
 
 # phina.accessory.RingLayout
