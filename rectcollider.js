@@ -49,12 +49,23 @@ phina.namespace(function() {
     
     hitTest: function(other) {
       if (!this.target) return;
+      if (!other.accessories) return;
       
       var x = this.collider.left + this.target.x;
       var y = this.collider.top + this.target.y;
       var rect = phina.geom.Rect(x, y, this.collider.width, this.collider.height);
 
-      if (phina.geom.Collision.testRectRect(rect, other)) return true;
+      for (var i = 0; i < other.accessories.length; i++) {
+        var accessory = other.accessories[i];
+        
+        if (accessory.collider && accessory.colliderType === 'rect') {
+          var x2 = accessory.collider.left + accessory.target.x;
+          var y2 = accessory.collider.top + accessory.target.y;
+          var rect2 = phina.geom.Rect(x2, y2, accessory.collider.width, accessory.collider.height);
+          
+          if (phina.geom.Collision.testRectRect(rect, rect2)) return true;
+        }
+      }
       return false;
     },
   });
