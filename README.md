@@ -32,31 +32,32 @@ reposition --- グリッド状に再配置する
 http://runstant.com/alkn203/projects/280cca92
 
 # phina.accessory.RingLayout
-Arrange groups(e.g. DipsplayElement) in a ring shape.
+グループを円状に並べる。
 
 ![RingLayout](https://rawgit.com/alkn203/phina-accessory/master/images/ringlayout.gif)
 
-### Usage
+### 使い方
+html部分で以下のように引用する。
 
 ```
 <script src="http://cdn.rawgit.com/phi-jp/phina.js/v0.2.0/build/phina.js"></script>
 <script src="https://rawgit.com/alkn203/phina-accessory/master/ringlayout.js"></script>
 ```
 
-### Property
+### プロパティ
 
 ```
-radius ---- Radius of a ring
-offsetX --- Offset value in x direction
-offsetY --- Offset value in y direction
+radius ---- 円の半径
+offsetX --- x方向のオフセット値
+offsetY --- y方向のオフセット値
 ```
 
 ### Function
 
 ```
-reposition --- Re-arrange elements 
+reposition --- 円状に再配置する
 ```
 
-### Example
+### サンプルコード
 
 http://runstant.com/alkn203/projects/3209a2e5
