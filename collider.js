@@ -47,26 +47,52 @@ phina.namespace(function() {
       return this;
     },
     
-    hitTest: function(other) {
+    hitTestRect: function(other) {
       if (!this.target) return;
       if (!other.accessories) return;
-
-      var x = this.collider.left + this.target.x;
-      var y = this.collider.top + this.target.y;
-      var rect = phina.geom.Rect(x, y, this.collider.width, this.collider.height);
+      
+      var rect = this.getAbsoluteRect(this.collider, this.target);
 
       for (var i = 0; i < other.accessories.length; i++) {
         var accessory = other.accessories[i];
         
         if (accessory.collider && accessory.colliderType === 'rect') {
-          var x2 = accessory.collider.left + accessory.target.x;
-          var y2 = accessory.collider.top + accessory.target.y;
-          var rect2 = phina.geom.Rect(x2, y2, accessory.collider.width, accessory.collider.height);
+          var rect2 = this.getAbsoluteRect(accessory.collider, accessory.target);
           
           if (phina.geom.Collision.testRectRect(rect, rect2)) return true;
         }
       }
       return false;
+    },
+    
+    hitTestCircle: function(other) {
+      if (!this.target) return;
+      if (!other.accessories) return;
+      
+      var rect = this.getAbsoluteRect(this.collider, this.target);
+
+      for (var i = 0; i < other.accessories.length; i++) {
+        var accessory = other.accessories[i];
+
+        if (accessory.collider && accessory.colliderType === 'circle') {
+          var circle = this.getAbsoluteCircle(accessory.collider, accessory.target);
+
+          if (phina.geom.Collision.testCircleRect(circle, rect)) return true;
+        }
+      }
+      return false;
+    },
+    
+    getAbsoluteRect: function(collider, target) {
+      var x = collider.left + target.x;
+      var y = collider.top + target.y;
+      return  phina.geom.Rect(x, y, collider.width, collider.height);
+    },
+    
+    getAbsoluteCircle: function(collider, target) {
+      var x = collider.x + target.x;
+      var y = collider.y + target.y;
+      return  phina.geom.Circle(x, y, collider.radius);
     },
   });
 
@@ -124,35 +150,53 @@ phina.namespace(function() {
       this.collider.radius = radius;
       return this;
     },
-    
-    hitTest: function(other) {
+
+    hitTestCircle: function(other) {
       if (!this.target) return;
       if (!other.accessories) return;
       
-      var x = this.collider.x + this.target.x;
-      var y = this.collider.y + this.target.y;
-      var circle = phina.geom.Circle(x, y, this.collider.radius);
+      var circle = this.getAbsoluteCircle(this.collider, this.target);
+
+      for (var i = 0; i < other.accessories.length; i++) {
+        var accessory = other.accessories[i];
+
+        if (accessory.collider && accessory.colliderType === 'circle') {
+          var circle2 = getAbsoluteCircle(accessory.collider, accessory.target);
+
+          if (phina.geom.Collision.testCircleCircle(circle, circle2)) return true;
+        }
+      }
+      return false;
+    },
+
+    hitTestRect: function(other) {
+      if (!this.target) return;
+      if (!other.accessories) return;
+      
+      var circle = this.getAbsoluteCircle(this.collider, this.target);
 
       for (var i = 0; i < other.accessories.length; i++) {
         var accessory = other.accessories[i];
         
         if (accessory.collider && accessory.colliderType === 'rect') {
-          var x2 = accessory.collider.left + accessory.target.x;
-          var y2 = accessory.collider.top + accessory.target.y;
-          var rect = phina.geom.Rect(x2, y2, accessory.collider.width, accessory.collider.height);
+          var rect = this.getAbsoluteRect(accessory.collider, accessory.target);
           
           if (phina.geom.Collision.testCircleRect(circle, rect)) return true;
         }
-
-        if (accessory.collider && accessory.colliderType === 'circle') {
-          var x3 = accessory.collider.x + accessory.target.x;
-          var y3 = accessory.collider.y + accessory.target.y;
-          var circle2 = phina.geom.Circle(x3, y3, accessory.collider.radius);
-          
-          if (phina.geom.Collision.testCircleCir(circle, circle2)) return true;
-        }
       }
       return false;
+    },
+    
+    getAbsoluteRect: function(collider, target) {
+      var x = collider.left + target.x;
+      var y = collider.top + target.y;
+      return  phina.geom.Rect(x, y, collider.width, collider.height);
+    },
+    
+    getAbsoluteCircle: function(collider, target) {
+      var x = collider.x + target.x;
+      var y = collider.y + target.y;
+      return  phina.geom.Circle(x, y, collider.radius);
     },
   });
 
