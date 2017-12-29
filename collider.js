@@ -4,7 +4,7 @@
 phina.namespace(function() {
   /**
    * @class phina.accessory.Collider
-   * RectCollider
+   * Collider
    * @extends phina.accessory.Accessory
    */
   phina.define('phina.accessory.Collider', {
