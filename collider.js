@@ -64,8 +64,8 @@ phina.namespace(function() {
     },
     // Colliderの絶対座標の矩形
     getAbsoluteRect: function() {
-      var x = this._collider.left + this.target.left;
-      var y = this._collider.top + this.target.top;
+      var x = this._collider.left + this.target.x;
+      var y = this._collider.top + this.target.y;
       return  phina.geom.Rect(x, y, this._collider.width, this._collider.height);
     },
   });
