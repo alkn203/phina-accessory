@@ -3,11 +3,11 @@
  */
 phina.namespace(function() {
   /**
-   * @class phina.accessory.RectCollider
+   * @class phina.accessory.Collider
    * RectCollider
    * @extends phina.accessory.Accessory
    */
-  phina.define('phina.accessory.RectCollider', {
+  phina.define('phina.accessory.Collider', {
     superClass: 'phina.accessory.Accessory',
     /**
      * @constructor
@@ -70,10 +70,10 @@ phina.namespace(function() {
     },
   });
 
-  phina.app.Element.prototype.getter('rectcollider', function() {
-    if (!this._rectcollider) {
-      this._rectcollider = phina.accessory.RectCollider().attachTo(this);
+  phina.app.Element.prototype.getter('collider', function() {
+    if (!this._collider) {
+      this._collider = phina.accessory.Collider().attachTo(this);
     }
-    return this._rectcollider;
+    return this._collider;
   });
 });
